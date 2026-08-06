@@ -16,10 +16,6 @@ public class LocationServiceTest {
         locationService = new LocationService();
     }
 
-    @AfterClass
-    public static void tearDown() {
-        HibernateUtil.shutdown();
-    }
 
     @Test
     public void createProvince_withNoParent_succeeds() {

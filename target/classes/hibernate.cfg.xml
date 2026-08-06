@@ -22,5 +22,7 @@
 
         
         <mapping class="com.auca.library.domain.Location"/>
+        <mapping class="com.auca.library.domain.Location"/>
+        <mapping class="com.auca.library.domain.User"/>
     </session-factory>
 </hibernate-configuration>

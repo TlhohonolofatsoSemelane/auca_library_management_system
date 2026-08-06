@@ -1,5 +1,10 @@
-com\auca\library\util\HibernateUtil.class
+com\auca\library\domain\User.class
 com\auca\library\dao\LocationDao.class
+com\auca\library\dao\UserDao.class
 com\auca\library\domain\Location$LocationType.class
 com\auca\library\domain\Location.class
+com\auca\library\domain\Person.class
+com\auca\library\service\UserService.class
+com\auca\library\util\HibernateUtil.class
+com\auca\library\domain\MembershipType.class
 com\auca\library\service\LocationService.class
