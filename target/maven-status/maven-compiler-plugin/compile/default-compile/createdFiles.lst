@@ -1,0 +1,5 @@
+com\auca\library\util\HibernateUtil.class
+com\auca\library\dao\LocationDao.class
+com\auca\library\domain\Location$LocationType.class
+com\auca\library\domain\Location.class
+com\auca\library\service\LocationService.class
