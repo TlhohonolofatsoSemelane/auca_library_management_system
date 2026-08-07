@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.auca.library.service.LocationServiceTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.771 s -- in com.auca.library.service.LocationServiceTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in com.auca.library.service.LocationServiceTest
