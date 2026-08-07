@@ -1,10 +1,14 @@
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\dao\BookDao.java
+C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\dao\BorrowRecordDao.java
+C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\dao\FeeDao.java
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\dao\LocationDao.java
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\dao\RoomDao.java
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\dao\ShelfDao.java
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\dao\UserDao.java
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\domain\Book.java
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\domain\BookCategory.java
+C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\domain\BorrowRecord.java
+C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\domain\Fee.java
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\domain\Location.java
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\domain\MembershipType.java
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\domain\Person.java
@@ -12,6 +16,7 @@ C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\domain\Room
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\domain\Shelf.java
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\domain\User.java
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\service\BookService.java
+C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\service\BorrowService.java
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\service\LocationService.java
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\service\UserService.java
 C:\Users\user\finalExam_testing_27293\src\main\java\com\auca\library\util\HibernateUtil.java

@@ -7,12 +7,17 @@ com\auca\library\domain\BookCategory.class
 com\auca\library\util\HibernateUtil.class
 com\auca\library\domain\Book.class
 com\auca\library\service\LocationService.class
+com\auca\library\dao\FeeDao.class
+com\auca\library\service\BorrowService.class
 com\auca\library\domain\Location$LocationType.class
 com\auca\library\domain\Location.class
+com\auca\library\dao\BorrowRecordDao.class
 com\auca\library\domain\Person.class
 com\auca\library\service\UserService.class
 com\auca\library\domain\Room.class
+com\auca\library\domain\Fee.class
 com\auca\library\service\BookService.class
 com\auca\library\dao\BookDao.class
 com\auca\library\dao\ShelfDao.class
 com\auca\library\domain\MembershipType.class
+com\auca\library\domain\BorrowRecord.class

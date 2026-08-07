@@ -21,10 +21,13 @@
         <property name="hbm2ddl.auto">create-drop</property>
 
         
+        <!-- Register Entity Classes -->
         <mapping class="com.auca.library.domain.Location"/>
         <mapping class="com.auca.library.domain.User"/>
         <mapping class="com.auca.library.domain.Room"/>
         <mapping class="com.auca.library.domain.Shelf"/>
         <mapping class="com.auca.library.domain.Book"/>
+        <mapping class="com.auca.library.domain.BorrowRecord"/>
+        <mapping class="com.auca.library.domain.Fee"/>
     </session-factory>
 </hibernate-configuration>

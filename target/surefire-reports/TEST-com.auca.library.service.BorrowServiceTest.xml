@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.auca.library.service.UserServiceTest" time="0.032" tests="11" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.auca.library.service.BorrowServiceTest" time="0.113" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -60,38 +60,204 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="validPersonId_returnsCorrectProvinceName" classname="com.auca.library.service.UserServiceTest" time="0.004">
+  <testcase name="returnBook_late_chargesLateFee" classname="com.auca.library.service.BorrowServiceTest" time="0.005">
     <system-out><![CDATA[Hibernate: 
+    insert 
+    into
+        users
+        (active_borrows_count, first_name, last_name, membership_approved, membership_type, password, username, village_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
     select
-        l1_0.id,
-        l1_0.location_code,
-        l1_0.name,
-        l1_0.parent_id,
-        l1_0.type 
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
     from
-        locations l1_0 
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
     where
-        l1_0.location_code=?
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    update
+        users 
+    set
+        active_borrows_count=?,
+        first_name=?,
+        last_name=?,
+        membership_approved=?,
+        membership_type=?,
+        password=?,
+        username=?,
+        village_id=? 
+    where
+        id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    update
+        users 
+    set
+        active_borrows_count=?,
+        first_name=?,
+        last_name=?,
+        membership_approved=?,
+        membership_type=?,
+        password=?,
+        username=?,
+        village_id=? 
+    where
+        id=?
 Hibernate: 
     insert 
     into
-        locations
-        (location_code, name, parent_id, type, id) 
+        books
+        (category, isbn, shelf_id, title, id) 
     values
         (?, ?, ?, ?, ?)
 Hibernate: 
     select
-        l1_0.id,
-        l1_0.location_code,
-        l1_0.name,
-        l1_0.parent_id,
-        l1_0.type 
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
     from
-        locations l1_0 
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
     where
-        l1_0.location_code=?
+        u1_0.id=?
 Hibernate: 
     select
+        b1_0.id,
+        b1_0.category,
+        b1_0.isbn,
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
         l1_0.id,
         l1_0.location_code,
         l1_0.name,
@@ -100,34 +266,541 @@ Hibernate:
         p1_0.name,
         p1_0.parent_id,
         p1_0.type,
-        l1_0.type 
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code,
+        b1_0.title 
     from
+        books b1_0 
+    left join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    left join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
         locations l1_0 
+            on l1_0.id=r1_0.location_id 
     left join
         locations p1_0 
             on p1_0.id=l1_0.parent_id 
     where
-        l1_0.id=?
+        b1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
 Hibernate: 
     insert 
     into
-        locations
-        (location_code, name, parent_id, type, id) 
+        borrow_records
+        (book_id, borrow_date, due_date, return_date, user_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    update
+        users 
+    set
+        active_borrows_count=?,
+        first_name=?,
+        last_name=?,
+        membership_approved=?,
+        membership_type=?,
+        password=?,
+        username=?,
+        village_id=? 
+    where
+        id=?
+Hibernate: 
+    select
+        br1_0.id,
+        br1_0.book_id,
+        b1_0.id,
+        b1_0.category,
+        b1_0.isbn,
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code,
+        b1_0.title,
+        br1_0.borrow_date,
+        br1_0.due_date,
+        br1_0.return_date,
+        br1_0.user_id,
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p3_0.id,
+        p3_0.location_code,
+        p3_0.name,
+        p3_0.parent_id,
+        p3_0.type,
+        v1_0.type 
+    from
+        borrow_records br1_0 
+    join
+        books b1_0 
+            on b1_0.id=br1_0.book_id 
+    left join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    left join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    join
+        users u1_0 
+            on u1_0.id=br1_0.user_id 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p3_0 
+            on p3_0.id=v1_0.parent_id 
+    where
+        br1_0.id=?
+Hibernate: 
+    select
+        br1_0.id,
+        br1_0.book_id,
+        b1_0.id,
+        b1_0.category,
+        b1_0.isbn,
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code,
+        b1_0.title,
+        br1_0.borrow_date,
+        br1_0.due_date,
+        br1_0.return_date,
+        br1_0.user_id,
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p3_0.id,
+        p3_0.location_code,
+        p3_0.name,
+        p3_0.parent_id,
+        p3_0.type,
+        v1_0.type 
+    from
+        borrow_records br1_0 
+    join
+        books b1_0 
+            on b1_0.id=br1_0.book_id 
+    left join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    left join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    join
+        users u1_0 
+            on u1_0.id=br1_0.user_id 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p3_0 
+            on p3_0.id=v1_0.parent_id 
+    where
+        br1_0.id=?
+Hibernate: 
+    update
+        borrow_records 
+    set
+        book_id=?,
+        borrow_date=?,
+        due_date=?,
+        return_date=?,
+        user_id=? 
+    where
+        id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    update
+        users 
+    set
+        active_borrows_count=?,
+        first_name=?,
+        last_name=?,
+        membership_approved=?,
+        membership_type=?,
+        password=?,
+        username=?,
+        village_id=? 
+    where
+        id=?
+Hibernate: 
+    insert 
+    into
+        fees
+        (amount, paid, user_id, id) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+]]></system-out>
+  </testcase>
+  <testcase name="borrowBook_validUserAndBook_savesSuccessfully" classname="com.auca.library.service.BorrowServiceTest" time="0.012">
+    <system-out><![CDATA[Hibernate: 
+    insert 
+    into
+        users
+        (active_borrows_count, first_name, last_name, membership_approved, membership_type, password, username, village_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    update
+        users 
+    set
+        active_borrows_count=?,
+        first_name=?,
+        last_name=?,
+        membership_approved=?,
+        membership_type=?,
+        password=?,
+        username=?,
+        village_id=? 
+    where
+        id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    update
+        users 
+    set
+        active_borrows_count=?,
+        first_name=?,
+        last_name=?,
+        membership_approved=?,
+        membership_type=?,
+        password=?,
+        username=?,
+        village_id=? 
+    where
+        id=?
+Hibernate: 
+    insert 
+    into
+        books
+        (category, isbn, shelf_id, title, id) 
     values
         (?, ?, ?, ?, ?)
 Hibernate: 
     select
-        l1_0.id,
-        l1_0.location_code,
-        l1_0.name,
-        l1_0.parent_id,
-        l1_0.type 
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
     from
-        locations l1_0 
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
     where
-        l1_0.location_code=?
+        u1_0.id=?
 Hibernate: 
     select
+        b1_0.id,
+        b1_0.category,
+        b1_0.isbn,
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
         l1_0.id,
         l1_0.location_code,
         l1_0.name,
@@ -136,34 +809,262 @@ Hibernate:
         p1_0.name,
         p1_0.parent_id,
         p1_0.type,
-        l1_0.type 
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code,
+        b1_0.title 
     from
+        books b1_0 
+    left join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    left join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
         locations l1_0 
+            on l1_0.id=r1_0.location_id 
     left join
         locations p1_0 
             on p1_0.id=l1_0.parent_id 
     where
-        l1_0.id=?
+        b1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
 Hibernate: 
     insert 
     into
-        locations
-        (location_code, name, parent_id, type, id) 
+        borrow_records
+        (book_id, borrow_date, due_date, return_date, user_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    update
+        users 
+    set
+        active_borrows_count=?,
+        first_name=?,
+        last_name=?,
+        membership_approved=?,
+        membership_type=?,
+        password=?,
+        username=?,
+        village_id=? 
+    where
+        id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+]]></system-out>
+  </testcase>
+  <testcase name="borrowBook_unapprovedUser_throwsException" classname="com.auca.library.service.BorrowServiceTest" time="0.046">
+    <system-out><![CDATA[Hibernate: 
+    insert 
+    into
+        users
+        (active_borrows_count, first_name, last_name, membership_approved, membership_type, password, username, village_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    update
+        users 
+    set
+        active_borrows_count=?,
+        first_name=?,
+        last_name=?,
+        membership_approved=?,
+        membership_type=?,
+        password=?,
+        username=?,
+        village_id=? 
+    where
+        id=?
+Hibernate: 
+    insert 
+    into
+        books
+        (category, isbn, shelf_id, title, id) 
     values
         (?, ?, ?, ?, ?)
 Hibernate: 
     select
-        l1_0.id,
-        l1_0.location_code,
-        l1_0.name,
-        l1_0.parent_id,
-        l1_0.type 
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
     from
-        locations l1_0 
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
     where
-        l1_0.location_code=?
+        u1_0.id=?
 Hibernate: 
     select
+        b1_0.id,
+        b1_0.category,
+        b1_0.isbn,
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
         l1_0.id,
         l1_0.location_code,
         l1_0.name,
@@ -172,52 +1073,255 @@ Hibernate:
         p1_0.name,
         p1_0.parent_id,
         p1_0.type,
-        l1_0.type 
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code,
+        b1_0.title 
     from
+        books b1_0 
+    left join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    left join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
         locations l1_0 
+            on l1_0.id=r1_0.location_id 
     left join
         locations p1_0 
             on p1_0.id=l1_0.parent_id 
     where
-        l1_0.id=?
+        b1_0.id=?
 Hibernate: 
     select
-        l1_0.id,
-        l1_0.location_code,
-        l1_0.name,
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
         p1_0.id,
         p1_0.location_code,
         p1_0.name,
         p1_0.parent_id,
         p1_0.type,
-        l1_0.type 
+        v1_0.type 
     from
-        locations l1_0 
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
     left join
         locations p1_0 
-            on p1_0.id=l1_0.parent_id 
+            on p1_0.id=v1_0.parent_id 
     where
-        l1_0.id=?
+        u1_0.id=?
+]]></system-out>
+  </testcase>
+  <testcase name="returnBook_onTime_noFeeCharged" classname="com.auca.library.service.BorrowServiceTest" time="0.041">
+    <system-out><![CDATA[Hibernate: 
+    insert 
+    into
+        users
+        (active_borrows_count, first_name, last_name, membership_approved, membership_type, password, username, village_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    update
+        users 
+    set
+        active_borrows_count=?,
+        first_name=?,
+        last_name=?,
+        membership_approved=?,
+        membership_type=?,
+        password=?,
+        username=?,
+        village_id=? 
+    where
+        id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    update
+        users 
+    set
+        active_borrows_count=?,
+        first_name=?,
+        last_name=?,
+        membership_approved=?,
+        membership_type=?,
+        password=?,
+        username=?,
+        village_id=? 
+    where
+        id=?
 Hibernate: 
     insert 
     into
-        locations
-        (location_code, name, parent_id, type, id) 
+        books
+        (category, isbn, shelf_id, title, id) 
     values
         (?, ?, ?, ?, ?)
 Hibernate: 
     select
-        l1_0.id,
-        l1_0.location_code,
-        l1_0.name,
-        l1_0.parent_id,
-        l1_0.type 
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
     from
-        locations l1_0 
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
     where
-        l1_0.location_code=?
+        u1_0.id=?
 Hibernate: 
     select
+        b1_0.id,
+        b1_0.category,
+        b1_0.isbn,
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
         l1_0.id,
         l1_0.location_code,
         l1_0.name,
@@ -226,16 +1330,117 @@ Hibernate:
         p1_0.name,
         p1_0.parent_id,
         p1_0.type,
-        l1_0.type 
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code,
+        b1_0.title 
     from
+        books b1_0 
+    left join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    left join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
         locations l1_0 
+            on l1_0.id=r1_0.location_id 
     left join
         locations p1_0 
             on p1_0.id=l1_0.parent_id 
     where
-        l1_0.id=?
+        b1_0.id=?
 Hibernate: 
     select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    insert 
+    into
+        borrow_records
+        (book_id, borrow_date, due_date, return_date, user_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    update
+        users 
+    set
+        active_borrows_count=?,
+        first_name=?,
+        last_name=?,
+        membership_approved=?,
+        membership_type=?,
+        password=?,
+        username=?,
+        village_id=? 
+    where
+        id=?
+Hibernate: 
+    select
+        br1_0.id,
+        br1_0.book_id,
+        b1_0.id,
+        b1_0.category,
+        b1_0.isbn,
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
         l1_0.id,
         l1_0.location_code,
         l1_0.name,
@@ -244,30 +1449,14 @@ Hibernate:
         p1_0.name,
         p1_0.parent_id,
         p1_0.type,
-        l1_0.type 
-    from
-        locations l1_0 
-    left join
-        locations p1_0 
-            on p1_0.id=l1_0.parent_id 
-    where
-        l1_0.id=?
-Hibernate: 
-    insert 
-    into
-        locations
-        (location_code, name, parent_id, type, id) 
-    values
-        (?, ?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        users
-        (active_borrows_count, first_name, last_name, membership_approved, membership_type, password, username, village_id, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    select
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code,
+        b1_0.title,
+        br1_0.borrow_date,
+        br1_0.due_date,
+        br1_0.return_date,
+        br1_0.user_id,
         u1_0.id,
         u1_0.active_borrows_count,
         u1_0.first_name,
@@ -279,24 +1468,52 @@ Hibernate:
         v1_0.id,
         v1_0.location_code,
         v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
+        p3_0.id,
+        p3_0.location_code,
+        p3_0.name,
+        p3_0.parent_id,
+        p3_0.type,
         v1_0.type 
     from
+        borrow_records br1_0 
+    join
+        books b1_0 
+            on b1_0.id=br1_0.book_id 
+    left join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    left join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    join
         users u1_0 
+            on u1_0.id=br1_0.user_id 
     left join
         locations v1_0 
             on v1_0.id=u1_0.village_id 
     left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
+        locations p3_0 
+            on p3_0.id=v1_0.parent_id 
     where
-        u1_0.id=?
+        br1_0.id=?
 Hibernate: 
     select
+        br1_0.id,
+        br1_0.book_id,
+        b1_0.id,
+        b1_0.category,
+        b1_0.isbn,
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
         l1_0.id,
         l1_0.location_code,
         l1_0.name,
@@ -305,16 +1522,125 @@ Hibernate:
         p1_0.name,
         p1_0.parent_id,
         p1_0.type,
-        l1_0.type 
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code,
+        b1_0.title,
+        br1_0.borrow_date,
+        br1_0.due_date,
+        br1_0.return_date,
+        br1_0.user_id,
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p3_0.id,
+        p3_0.location_code,
+        p3_0.name,
+        p3_0.parent_id,
+        p3_0.type,
+        v1_0.type 
     from
+        borrow_records br1_0 
+    join
+        books b1_0 
+            on b1_0.id=br1_0.book_id 
+    left join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    left join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
         locations l1_0 
+            on l1_0.id=r1_0.location_id 
     left join
         locations p1_0 
             on p1_0.id=l1_0.parent_id 
+    join
+        users u1_0 
+            on u1_0.id=br1_0.user_id 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p3_0 
+            on p3_0.id=v1_0.parent_id 
     where
-        l1_0.id=?
+        br1_0.id=?
+Hibernate: 
+    update
+        borrow_records 
+    set
+        book_id=?,
+        borrow_date=?,
+        due_date=?,
+        return_date=?,
+        user_id=? 
+    where
+        id=?
 Hibernate: 
     select
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        v1_0.type 
+    from
+        users u1_0 
+    left join
+        locations v1_0 
+            on v1_0.id=u1_0.village_id 
+    left join
+        locations p1_0 
+            on p1_0.id=v1_0.parent_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    update
+        users 
+    set
+        active_borrows_count=?,
+        first_name=?,
+        last_name=?,
+        membership_approved=?,
+        membership_type=?,
+        password=?,
+        username=?,
+        village_id=? 
+    where
+        id=?
+Hibernate: 
+    select
+        br1_0.id,
+        br1_0.book_id,
+        b1_0.id,
+        b1_0.category,
+        b1_0.isbn,
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
         l1_0.id,
         l1_0.location_code,
         l1_0.name,
@@ -323,1223 +1649,59 @@ Hibernate:
         p1_0.name,
         p1_0.parent_id,
         p1_0.type,
-        l1_0.type 
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code,
+        b1_0.title,
+        br1_0.borrow_date,
+        br1_0.due_date,
+        br1_0.return_date,
+        br1_0.user_id,
+        u1_0.id,
+        u1_0.active_borrows_count,
+        u1_0.first_name,
+        u1_0.last_name,
+        u1_0.membership_approved,
+        u1_0.membership_type,
+        u1_0.password,
+        u1_0.username,
+        v1_0.id,
+        v1_0.location_code,
+        v1_0.name,
+        p3_0.id,
+        p3_0.location_code,
+        p3_0.name,
+        p3_0.parent_id,
+        p3_0.type,
+        v1_0.type 
     from
+        borrow_records br1_0 
+    join
+        books b1_0 
+            on b1_0.id=br1_0.book_id 
+    left join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    left join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
         locations l1_0 
+            on l1_0.id=r1_0.location_id 
     left join
         locations p1_0 
             on p1_0.id=l1_0.parent_id 
-    where
-        l1_0.id=?
-]]></system-out>
-  </testcase>
-  <testcase name="authenticate_unknownUsername_returnsFalse" classname="com.auca.library.service.UserServiceTest" time="0.002">
-    <system-out><![CDATA[Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        u1_0.village_id 
-    from
+    join
         users u1_0 
-    where
-        u1_0.username=?
-]]></system-out>
-  </testcase>
-  <testcase name="authenticate_wrongPassword_returnsFalse" classname="com.auca.library.service.UserServiceTest" time="0.002">
-    <system-out><![CDATA[Hibernate: 
-    insert 
-    into
-        users
-        (active_borrows_count, first_name, last_name, membership_approved, membership_type, password, username, village_id, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        u1_0.village_id 
-    from
-        users u1_0 
-    where
-        u1_0.username=?
-]]></system-out>
-  </testcase>
-  <testcase name="striverMember_withTwoActiveBorrows_isBlocked" classname="com.auca.library.service.UserServiceTest" time="0.003">
-    <system-out><![CDATA[Hibernate: 
-    insert 
-    into
-        users
-        (active_borrows_count, first_name, last_name, membership_approved, membership_type, password, username, village_id, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
+            on u1_0.id=br1_0.user_id 
     left join
         locations v1_0 
             on v1_0.id=u1_0.village_id 
     left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
+        locations p3_0 
+            on p3_0.id=v1_0.parent_id 
     where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    update
-        users 
-    set
-        active_borrows_count=?,
-        first_name=?,
-        last_name=?,
-        membership_approved=?,
-        membership_type=?,
-        password=?,
-        username=?,
-        village_id=? 
-    where
-        id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    update
-        users 
-    set
-        active_borrows_count=?,
-        first_name=?,
-        last_name=?,
-        membership_approved=?,
-        membership_type=?,
-        password=?,
-        username=?,
-        village_id=? 
-    where
-        id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    update
-        users 
-    set
-        active_borrows_count=?,
-        first_name=?,
-        last_name=?,
-        membership_approved=?,
-        membership_type=?,
-        password=?,
-        username=?,
-        village_id=? 
-    where
-        id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-]]></system-out>
-  </testcase>
-  <testcase name="goldMember_withFiveActiveBorrows_cannotBorrowASixth" classname="com.auca.library.service.UserServiceTest" time="0.003">
-    <system-out><![CDATA[Hibernate: 
-    insert 
-    into
-        users
-        (active_borrows_count, first_name, last_name, membership_approved, membership_type, password, username, village_id, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    update
-        users 
-    set
-        active_borrows_count=?,
-        first_name=?,
-        last_name=?,
-        membership_approved=?,
-        membership_type=?,
-        password=?,
-        username=?,
-        village_id=? 
-    where
-        id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    update
-        users 
-    set
-        active_borrows_count=?,
-        first_name=?,
-        last_name=?,
-        membership_approved=?,
-        membership_type=?,
-        password=?,
-        username=?,
-        village_id=? 
-    where
-        id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    update
-        users 
-    set
-        active_borrows_count=?,
-        first_name=?,
-        last_name=?,
-        membership_approved=?,
-        membership_type=?,
-        password=?,
-        username=?,
-        village_id=? 
-    where
-        id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-]]></system-out>
-  </testcase>
-  <testcase name="registerMembership_gold_createsPendingMembershipLinkedToGoldType" classname="com.auca.library.service.UserServiceTest" time="0.002">
-    <system-out><![CDATA[Hibernate: 
-    insert 
-    into
-        users
-        (active_borrows_count, first_name, last_name, membership_approved, membership_type, password, username, village_id, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    update
-        users 
-    set
-        active_borrows_count=?,
-        first_name=?,
-        last_name=?,
-        membership_approved=?,
-        membership_type=?,
-        password=?,
-        username=?,
-        village_id=? 
-    where
-        id=?
-]]></system-out>
-  </testcase>
-  <testcase name="authenticate_correctCredentials_returnsTrue" classname="com.auca.library.service.UserServiceTest" time="0.001">
-    <system-out><![CDATA[Hibernate: 
-    insert 
-    into
-        users
-        (active_borrows_count, first_name, last_name, membership_approved, membership_type, password, username, village_id, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        u1_0.village_id 
-    from
-        users u1_0 
-    where
-        u1_0.username=?
-]]></system-out>
-  </testcase>
-  <testcase name="authenticate_nullOrBlankInput_returnsFalse" classname="com.auca.library.service.UserServiceTest" time="0.0"/>
-  <testcase name="registerMembership_userAlreadyHasActiveMembership_throwsException" classname="com.auca.library.service.UserServiceTest" time="0.002">
-    <system-out><![CDATA[Hibernate: 
-    insert 
-    into
-        users
-        (active_borrows_count, first_name, last_name, membership_approved, membership_type, password, username, village_id, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    update
-        users 
-    set
-        active_borrows_count=?,
-        first_name=?,
-        last_name=?,
-        membership_approved=?,
-        membership_type=?,
-        password=?,
-        username=?,
-        village_id=? 
-    where
-        id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    update
-        users 
-    set
-        active_borrows_count=?,
-        first_name=?,
-        last_name=?,
-        membership_approved=?,
-        membership_type=?,
-        password=?,
-        username=?,
-        village_id=? 
-    where
-        id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-]]></system-out>
-  </testcase>
-  <testcase name="goldMember_withFourActiveBorrows_canBorrowAFifth" classname="com.auca.library.service.UserServiceTest" time="0.004">
-    <system-out><![CDATA[Hibernate: 
-    insert 
-    into
-        users
-        (active_borrows_count, first_name, last_name, membership_approved, membership_type, password, username, village_id, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    update
-        users 
-    set
-        active_borrows_count=?,
-        first_name=?,
-        last_name=?,
-        membership_approved=?,
-        membership_type=?,
-        password=?,
-        username=?,
-        village_id=? 
-    where
-        id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    update
-        users 
-    set
-        active_borrows_count=?,
-        first_name=?,
-        last_name=?,
-        membership_approved=?,
-        membership_type=?,
-        password=?,
-        username=?,
-        village_id=? 
-    where
-        id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    update
-        users 
-    set
-        active_borrows_count=?,
-        first_name=?,
-        last_name=?,
-        membership_approved=?,
-        membership_type=?,
-        password=?,
-        username=?,
-        village_id=? 
-    where
-        id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-]]></system-out>
-  </testcase>
-  <testcase name="silverMember_withThreeActiveBorrows_isBlocked" classname="com.auca.library.service.UserServiceTest" time="0.004">
-    <system-out><![CDATA[Hibernate: 
-    insert 
-    into
-        users
-        (active_borrows_count, first_name, last_name, membership_approved, membership_type, password, username, village_id, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    update
-        users 
-    set
-        active_borrows_count=?,
-        first_name=?,
-        last_name=?,
-        membership_approved=?,
-        membership_type=?,
-        password=?,
-        username=?,
-        village_id=? 
-    where
-        id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    update
-        users 
-    set
-        active_borrows_count=?,
-        first_name=?,
-        last_name=?,
-        membership_approved=?,
-        membership_type=?,
-        password=?,
-        username=?,
-        village_id=? 
-    where
-        id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.active_borrows_count,
-        u1_0.first_name,
-        u1_0.last_name,
-        u1_0.membership_approved,
-        u1_0.membership_type,
-        u1_0.password,
-        u1_0.username,
-        v1_0.id,
-        v1_0.location_code,
-        v1_0.name,
-        p1_0.id,
-        p1_0.location_code,
-        p1_0.name,
-        p1_0.parent_id,
-        p1_0.type,
-        v1_0.type 
-    from
-        users u1_0 
-    left join
-        locations v1_0 
-            on v1_0.id=u1_0.village_id 
-    left join
-        locations p1_0 
-            on p1_0.id=v1_0.parent_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    update
-        users 
-    set
-        active_borrows_count=?,
-        first_name=?,
-        last_name=?,
-        membership_approved=?,
-        membership_type=?,
-        password=?,
-        username=?,
-        village_id=? 
-    where
-        id=?
+        br1_0.id=?
 Hibernate: 
     select
         u1_0.id,
