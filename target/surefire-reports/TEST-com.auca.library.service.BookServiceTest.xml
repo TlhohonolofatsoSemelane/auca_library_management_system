@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.auca.library.service.BookServiceTest" time="3.187" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.auca.library.service.BookServiceTest" time="3.248" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\user\finalExam_testing_27293\target\test-classes;C:\Users\user\finalExam_testing_27293\target\classes;C:\Users\user\.m2\repository\org\hibernate\orm\hibernate-core\6.5.2.Final\hibernate-core-6.5.2.Final.jar;C:\Users\user\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\user\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\user\.m2\repository\org\jboss\logging\jboss-logging\3.5.0.Final\jboss-logging-3.5.0.Final.jar;C:\Users\user\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\user\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\user\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\user\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\user\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.0\jakarta.xml.bind-api-4.0.0.jar;C:\Users\user\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.0\jakarta.activation-api-2.1.0.jar;C:\Users\user\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.2\jaxb-runtime-4.0.2.jar;C:\Users\user\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.2\jaxb-core-4.0.2.jar;C:\Users\user\.m2\repository\org\eclipse\angus\angus-activation\2.0.0\angus-activation-2.0.0.jar;C:\Users\user\.m2\repository\org\glassfish\jaxb\txw2\4.0.2\txw2-4.0.2.jar;C:\Users\user\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.1\istack-commons-runtime-4.1.1.jar;C:\Users\user\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\user\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\user\.m2\repository\org\postgresql\postgresql\42.7.3\postgresql-42.7.3.jar;C:\Users\user\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\user\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\user\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.class.path" value="C:\Users\user\finalExam_testing_27293\target\test-classes;C:\Users\user\finalExam_testing_27293\target\classes;C:\Users\user\.m2\repository\org\hibernate\orm\hibernate-core\6.5.2.Final\hibernate-core-6.5.2.Final.jar;C:\Users\user\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\user\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\user\.m2\repository\org\jboss\logging\jboss-logging\3.5.0.Final\jboss-logging-3.5.0.Final.jar;C:\Users\user\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\user\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\user\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\user\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\user\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.0\jakarta.xml.bind-api-4.0.0.jar;C:\Users\user\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.0\jakarta.activation-api-2.1.0.jar;C:\Users\user\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.2\jaxb-runtime-4.0.2.jar;C:\Users\user\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.2\jaxb-core-4.0.2.jar;C:\Users\user\.m2\repository\org\eclipse\angus\angus-activation\2.0.0\angus-activation-2.0.0.jar;C:\Users\user\.m2\repository\org\glassfish\jaxb\txw2\4.0.2\txw2-4.0.2.jar;C:\Users\user\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.1\istack-commons-runtime-4.1.1.jar;C:\Users\user\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\user\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\user\.m2\repository\org\hibernate\orm\hibernate-hikaricp\6.5.2.Final\hibernate-hikaricp-6.5.2.Final.jar;C:\Users\user\.m2\repository\com\zaxxer\HikariCP\3.2.0\HikariCP-3.2.0.jar;C:\Users\user\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\user\.m2\repository\org\postgresql\postgresql\42.7.3\postgresql-42.7.3.jar;C:\Users\user\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\user\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\user\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Users\user\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\java\25\bin"/>
-    <property name="sun.java.command" value="C:\Users\user\AppData\Local\Temp\surefire13445750038351618264\surefirebooter-20260807180700774_3.jar C:\Users\user\AppData\Local\Temp\surefire13445750038351618264 2026-08-07T18-07-00_600-jvmRun1 surefire-20260807180700774_1tmp surefire_0-20260807180700774_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\user\AppData\Local\Temp\surefire6925865173702091833\surefirebooter-20260809025315991_3.jar C:\Users\user\AppData\Local\Temp\surefire6925865173702091833 2026-08-09T02-53-15_838-jvmRun1 surefire-20260809025315991_1tmp surefire_0-20260809025315991_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\user\finalExam_testing_27293\target\test-classes;C:\Users\user\finalExam_testing_27293\target\classes;C:\Users\user\.m2\repository\org\hibernate\orm\hibernate-core\6.5.2.Final\hibernate-core-6.5.2.Final.jar;C:\Users\user\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\user\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\user\.m2\repository\org\jboss\logging\jboss-logging\3.5.0.Final\jboss-logging-3.5.0.Final.jar;C:\Users\user\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\user\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\user\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\user\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\user\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.0\jakarta.xml.bind-api-4.0.0.jar;C:\Users\user\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.0\jakarta.activation-api-2.1.0.jar;C:\Users\user\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.2\jaxb-runtime-4.0.2.jar;C:\Users\user\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.2\jaxb-core-4.0.2.jar;C:\Users\user\.m2\repository\org\eclipse\angus\angus-activation\2.0.0\angus-activation-2.0.0.jar;C:\Users\user\.m2\repository\org\glassfish\jaxb\txw2\4.0.2\txw2-4.0.2.jar;C:\Users\user\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.1\istack-commons-runtime-4.1.1.jar;C:\Users\user\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\user\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\user\.m2\repository\org\postgresql\postgresql\42.7.3\postgresql-42.7.3.jar;C:\Users\user\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\user\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\user\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\user\finalExam_testing_27293\target\test-classes;C:\Users\user\finalExam_testing_27293\target\classes;C:\Users\user\.m2\repository\org\hibernate\orm\hibernate-core\6.5.2.Final\hibernate-core-6.5.2.Final.jar;C:\Users\user\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\user\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\user\.m2\repository\org\jboss\logging\jboss-logging\3.5.0.Final\jboss-logging-3.5.0.Final.jar;C:\Users\user\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\user\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\user\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\user\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\user\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.0\jakarta.xml.bind-api-4.0.0.jar;C:\Users\user\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.0\jakarta.activation-api-2.1.0.jar;C:\Users\user\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.2\jaxb-runtime-4.0.2.jar;C:\Users\user\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.2\jaxb-core-4.0.2.jar;C:\Users\user\.m2\repository\org\eclipse\angus\angus-activation\2.0.0\angus-activation-2.0.0.jar;C:\Users\user\.m2\repository\org\glassfish\jaxb\txw2\4.0.2\txw2-4.0.2.jar;C:\Users\user\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.1\istack-commons-runtime-4.1.1.jar;C:\Users\user\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\user\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\user\.m2\repository\org\hibernate\orm\hibernate-hikaricp\6.5.2.Final\hibernate-hikaricp-6.5.2.Final.jar;C:\Users\user\.m2\repository\com\zaxxer\HikariCP\3.2.0\HikariCP-3.2.0.jar;C:\Users\user\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\user\.m2\repository\org\postgresql\postgresql\42.7.3\postgresql-42.7.3.jar;C:\Users\user\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\user\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\user\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\user"/>
     <property name="user.language" value="en"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\user\AppData\Local\Temp\surefire13445750038351618264\surefirebooter-20260807180700774_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\user\AppData\Local\Temp\surefire6925865173702091833\surefirebooter-20260809025315991_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25.0.3+9-LTS"/>
@@ -60,7 +60,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="assignBookToShelf_matchingCategories_savesSuccessfully" classname="com.auca.library.service.BookServiceTest" time="3.057">
+  <testcase name="createRoom_validRoom_savesSuccessfully" classname="com.auca.library.service.BookServiceTest" time="2.876">
     <system-out><![CDATA[Hibernate: 
     alter table if exists books 
        drop constraint if exists FK7tke469ud4q2m1d0h5pr6ti15
@@ -230,6 +230,46 @@ Hibernate:
         (location_id, room_code, id) 
     values
         (?, ?, ?)
+]]></system-out>
+    <system-err><![CDATA[Aug 09, 2026 2:53:16 AM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate ORM core version 6.5.2.Final
+Aug 09, 2026 2:53:17 AM org.hibernate.cache.internal.RegionFactoryInitiator initiateService
+INFO: HHH000026: Second-level cache disabled
+Aug 09, 2026 2:53:17 AM org.hibernate.engine.jdbc.connections.internal.ConnectionProviderInitiator initiateService
+INFO: HHH000130: Instantiating explicit connection provider: org.hibernate.hikaricp.internal.HikariCPConnectionProvider
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Aug 09, 2026 2:53:17 AM org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl constructDialect
+WARN: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+]]></system-err>
+  </testcase>
+  <testcase name="multipleRooms_returnsRoomWithLowestBookCount" classname="com.auca.library.service.BookServiceTest" time="0.171">
+    <system-out><![CDATA[Hibernate: 
+    select
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        l1_0.parent_id,
+        l1_0.type 
+    from
+        locations l1_0 
+    where
+        l1_0.location_code=?
+Hibernate: 
+    insert 
+    into
+        locations
+        (location_code, name, parent_id, type, id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        rooms
+        (location_id, room_code, id) 
+    values
+        (?, ?, ?)
 Hibernate: 
     insert 
     into
@@ -237,6 +277,327 @@ Hibernate:
         (category, room_id, shelf_code, id) 
     values
         (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        books
+        (category, isbn, shelf_id, title, id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.category,
+        b1_0.isbn,
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code,
+        b1_0.title 
+    from
+        books b1_0 
+    left join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    left join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    where
+        b1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code 
+    from
+        shelves s1_0 
+    join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.category,
+        b1_0.isbn,
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code,
+        b1_0.title 
+    from
+        books b1_0 
+    left join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    left join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    where
+        b1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code 
+    from
+        shelves s1_0 
+    join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    where
+        s1_0.id=?
+Hibernate: 
+    update
+        books 
+    set
+        category=?,
+        isbn=?,
+        shelf_id=?,
+        title=? 
+    where
+        id=?
+Hibernate: 
+    insert 
+    into
+        rooms
+        (location_id, room_code, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.location_id,
+        r1_0.room_code 
+    from
+        rooms r1_0
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type 
+    from
+        locations l1_0 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    where
+        l1_0.id=?
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type 
+    from
+        locations l1_0 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    where
+        l1_0.id=?
+Hibernate: 
+    select
+        count(b1_0.id) 
+    from
+        books b1_0 
+    join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    where
+        s1_0.room_id=?
+Hibernate: 
+    select
+        count(b1_0.id) 
+    from
+        books b1_0 
+    join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    where
+        s1_0.room_id=?
+Hibernate: 
+    select
+        count(b1_0.id) 
+    from
+        books b1_0 
+    join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    where
+        s1_0.room_id=?
+Hibernate: 
+    select
+        count(b1_0.id) 
+    from
+        books b1_0 
+    join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    where
+        s1_0.room_id=?
+Hibernate: 
+    select
+        count(b1_0.id) 
+    from
+        books b1_0 
+    join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    where
+        s1_0.room_id=?
+]]></system-out>
+  </testcase>
+  <testcase name="createBook_validBook_savesSuccessfully" classname="com.auca.library.service.BookServiceTest" time="0.015">
+    <system-out><![CDATA[Hibernate: 
+    insert 
+    into
+        books
+        (category, isbn, shelf_id, title, id) 
+    values
+        (?, ?, ?, ?, ?)
+]]></system-out>
+  </testcase>
+  <testcase name="roomWithMultipleShelves_sumsBookCountsAcrossShelves" classname="com.auca.library.service.BookServiceTest" time="0.059">
+    <system-out><![CDATA[Hibernate: 
+    select
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        l1_0.parent_id,
+        l1_0.type 
+    from
+        locations l1_0 
+    where
+        l1_0.location_code=?
+Hibernate: 
+    insert 
+    into
+        locations
+        (location_code, name, parent_id, type, id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        rooms
+        (location_id, room_code, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shelves
+        (category, room_id, shelf_code, id) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shelves
+        (category, room_id, shelf_code, id) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        books
+        (category, isbn, shelf_id, title, id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        books
+        (category, isbn, shelf_id, title, id) 
+    values
+        (?, ?, ?, ?, ?)
 Hibernate: 
     insert 
     into
@@ -430,61 +791,37 @@ Hibernate:
             on p1_0.id=l1_0.parent_id 
     where
         b1_0.id=?
-]]></system-out>
-    <system-err><![CDATA[Aug 07, 2026 6:07:02 PM org.hibernate.Version logVersion
-INFO: HHH000412: Hibernate ORM core version 6.5.2.Final
-Aug 07, 2026 6:07:03 PM org.hibernate.cache.internal.RegionFactoryInitiator initiateService
-INFO: HHH000026: Second-level cache disabled
-Aug 07, 2026 6:07:03 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-Aug 07, 2026 6:07:03 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-Aug 07, 2026 6:07:03 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/auca_library_db]
-Aug 07, 2026 6:07:03 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001001: Connection properties: {user=postgres, password=****}
-Aug 07, 2026 6:07:03 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001003: Autocommit mode: false
-Aug 07, 2026 6:07:03 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
-INFO: HHH10001115: Connection pool size: 20 (min=1)
-Aug 07, 2026 6:07:03 PM org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl constructDialect
-WARN: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-Aug 07, 2026 6:07:05 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
-INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-Aug 07, 2026 6:07:05 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
-INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@11df2829] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-Aug 07, 2026 6:07:05 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler logWarning
-WARN: SQL Warning Code: 0, SQLState: 00000
-Aug 07, 2026 6:07:05 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler logWarning
-WARN: relation "borrow_records" does not exist, skipping
-Aug 07, 2026 6:07:05 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler logWarning
-WARN: SQL Warning Code: 0, SQLState: 00000
-Aug 07, 2026 6:07:05 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler logWarning
-WARN: relation "borrow_records" does not exist, skipping
-Aug 07, 2026 6:07:05 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler logWarning
-WARN: SQL Warning Code: 0, SQLState: 00000
-Aug 07, 2026 6:07:05 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler logWarning
-WARN: relation "fees" does not exist, skipping
-Aug 07, 2026 6:07:05 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler logWarning
-WARN: SQL Warning Code: 0, SQLState: 00000
-Aug 07, 2026 6:07:05 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler logWarning
-WARN: table "borrow_records" does not exist, skipping
-Aug 07, 2026 6:07:05 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler logWarning
-WARN: SQL Warning Code: 0, SQLState: 00000
-Aug 07, 2026 6:07:05 PM org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler logWarning
-WARN: table "fees" does not exist, skipping
-Aug 07, 2026 6:07:05 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
-INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4a642e4b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-]]></system-err>
-  </testcase>
-  <testcase name="getBookLocationName_unassignedBook_throwsException" classname="com.auca.library.service.BookServiceTest" time="0.002">
-    <system-out><![CDATA[Hibernate: 
-    insert 
-    into
-        books
-        (category, isbn, shelf_id, title, id) 
-    values
-        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code 
+    from
+        shelves s1_0 
+    join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    where
+        s1_0.id=?
 Hibernate: 
     select
         b1_0.id,
@@ -523,9 +860,208 @@ Hibernate:
             on p1_0.id=l1_0.parent_id 
     where
         b1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code 
+    from
+        shelves s1_0 
+    join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    where
+        s1_0.id=?
+Hibernate: 
+    update
+        books 
+    set
+        category=?,
+        isbn=?,
+        shelf_id=?,
+        title=? 
+    where
+        id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.category,
+        b1_0.isbn,
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code,
+        b1_0.title 
+    from
+        books b1_0 
+    left join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    left join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    where
+        b1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code 
+    from
+        shelves s1_0 
+    join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.category,
+        b1_0.isbn,
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code,
+        b1_0.title 
+    from
+        books b1_0 
+    left join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    left join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    where
+        b1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code 
+    from
+        shelves s1_0 
+    join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    where
+        s1_0.id=?
+Hibernate: 
+    update
+        books 
+    set
+        category=?,
+        isbn=?,
+        shelf_id=?,
+        title=? 
+    where
+        id=?
+Hibernate: 
+    select
+        count(b1_0.id) 
+    from
+        books b1_0 
+    join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    where
+        s1_0.room_id=?
 ]]></system-out>
   </testcase>
-  <testcase name="getBookLocationName_returnsCorrectLocationName" classname="com.auca.library.service.BookServiceTest" time="0.03">
+  <testcase name="assignBookToShelf_validCategory_succeeds" classname="com.auca.library.service.BookServiceTest" time="0.022">
     <system-out><![CDATA[Hibernate: 
     select
         l1_0.id,
@@ -753,7 +1289,217 @@ Hibernate:
         b1_0.id=?
 ]]></system-out>
   </testcase>
-  <testcase name="assignBookToShelf_mismatchedCategories_throwsException" classname="com.auca.library.service.BookServiceTest" time="0.017">
+  <testcase name="assignShelfToRoom_updatesShelfRoomId" classname="com.auca.library.service.BookServiceTest" time="0.01">
+    <system-out><![CDATA[Hibernate: 
+    select
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        l1_0.parent_id,
+        l1_0.type 
+    from
+        locations l1_0 
+    where
+        l1_0.location_code=?
+Hibernate: 
+    insert 
+    into
+        locations
+        (location_code, name, parent_id, type, id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        rooms
+        (location_id, room_code, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        rooms
+        (location_id, room_code, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shelves
+        (category, room_id, shelf_code, id) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code 
+    from
+        shelves s1_0 
+    join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.location_id,
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type,
+        r1_0.room_code 
+    from
+        rooms r1_0 
+    join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    where
+        r1_0.id=?
+Hibernate: 
+    update
+        shelves 
+    set
+        category=?,
+        room_id=?,
+        shelf_code=? 
+    where
+        id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.category,
+        s1_0.room_id,
+        r1_0.id,
+        r1_0.location_id,
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        p1_0.id,
+        p1_0.location_code,
+        p1_0.name,
+        p1_0.parent_id,
+        p1_0.type,
+        l1_0.type,
+        r1_0.room_code,
+        s1_0.shelf_code 
+    from
+        shelves s1_0 
+    join
+        rooms r1_0 
+            on r1_0.id=s1_0.room_id 
+    left join
+        locations l1_0 
+            on l1_0.id=r1_0.location_id 
+    left join
+        locations p1_0 
+            on p1_0.id=l1_0.parent_id 
+    where
+        s1_0.id=?
+]]></system-out>
+  </testcase>
+  <testcase name="roomWithNoShelves_returnsZero" classname="com.auca.library.service.BookServiceTest" time="0.005">
+    <system-out><![CDATA[Hibernate: 
+    select
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        l1_0.parent_id,
+        l1_0.type 
+    from
+        locations l1_0 
+    where
+        l1_0.location_code=?
+Hibernate: 
+    insert 
+    into
+        locations
+        (location_code, name, parent_id, type, id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        rooms
+        (location_id, room_code, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        count(b1_0.id) 
+    from
+        books b1_0 
+    join
+        shelves s1_0 
+            on s1_0.id=b1_0.shelf_id 
+    where
+        s1_0.room_id=?
+]]></system-out>
+  </testcase>
+  <testcase name="createShelf_validShelf_savesSuccessfully" classname="com.auca.library.service.BookServiceTest" time="0.008">
+    <system-out><![CDATA[Hibernate: 
+    select
+        l1_0.id,
+        l1_0.location_code,
+        l1_0.name,
+        l1_0.parent_id,
+        l1_0.type 
+    from
+        locations l1_0 
+    where
+        l1_0.location_code=?
+Hibernate: 
+    insert 
+    into
+        locations
+        (location_code, name, parent_id, type, id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        rooms
+        (location_id, room_code, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shelves
+        (category, room_id, shelf_code, id) 
+    values
+        (?, ?, ?, ?)
+]]></system-out>
+  </testcase>
+  <testcase name="assignBookToShelf_mismatchedCategory_throwsException" classname="com.auca.library.service.BookServiceTest" time="0.014">
     <system-out><![CDATA[Hibernate: 
     select
         l1_0.id,

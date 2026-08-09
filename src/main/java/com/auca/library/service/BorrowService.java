@@ -73,5 +73,35 @@ public class BorrowService {
             Fee fee = new Fee(user, feeAmount);
             feeDao.save(fee);
         }
+    } 
+
+    // Requirement 13: Calculate late return fees (using membership rates)
+    public int calculateLateFee(UUID borrowRecordId) {
+        BorrowRecord record = borrowRecordDao.findById(borrowRecordId);
+        if (record == null) {
+            throw new IllegalArgumentException("Borrow record not found.");
+        }
+
+        LocalDate endCompare = record.getReturnDate() != null ? record.getReturnDate() : LocalDate.now();
+        if (!endCompare.isAfter(record.getDueDate())) {
+            return 0;
+        }
+
+        long lateDays = ChronoUnit.DAYS.between(record.getDueDate(), endCompare);
+        int dailyRate = 0;
+
+        switch (record.getUser().getMembershipType()) {
+            case GOLD:
+                dailyRate = 50;
+                break;
+            case SILVER:
+                dailyRate = 30;
+                break;
+            case STRIVER:
+                dailyRate = 10;
+                break;
+        }
+
+        return (int) (lateDays * dailyRate);
     }
 }
