@@ -60,6 +60,28 @@ The screenshot below shows the successful execution of the automated test suite.
 
 ---
 
+### Test Coverage
+
+The automated test suite verifies the main business logic of the system, including:
+
+User registration
+Membership validation
+Province and location lookups
+Book creation
+Shelf creation
+Room creation
+Shelf assignment to room
+Book assignment to shelf
+Book category validation
+Borrowing record creation
+Borrow limit checking
+Room-based book counting
+Room inventory optimization
+Late fee calculation
+Hibernate session and transaction handling
+
+---
+
 
 
 
