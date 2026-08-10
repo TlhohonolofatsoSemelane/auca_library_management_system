@@ -7,9 +7,9 @@ This project focuses on clean entity relationships, service-layer business logic
 
 ---
 
-## What We Did
+## What I Did
 
-We built and tested a complete backend library management system with the following features:
+I built and tested a complete backend library management system with the following features:
 
 - User registration and membership management
 - Province and location-based user tracking
