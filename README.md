@@ -1,57 +1,65 @@
-# 📚 AUCA Library Management System
+# AUCA Library Management System
 
-A robust, high-performance Library Management System built with **Java**, **Hibernate/JPA**, **PostgreSQL**, and **JUnit**. This system handles complex library operations—including multi-level location hierarchies, membership-tier validation, smart inventory allocation, and automatic late fee calculations—all verified by a comprehensive test suite.
+A Java-based Library Management System built with **Hibernate/JPA**, **PostgreSQL**, **Maven**, and **JUnit**.  
+The system manages users, memberships, books, shelves, rooms, borrowing records, locations, and late fee calculations.
 
----
-
-## 🚀 Key Features & What We Did
-
-We implemented and fully verified the core business logic of the library system:
-
-*   **📍 Hierarchical Location Management:** Full geographic tracking from Province ➔ District ➔ Sector ➔ Cell ➔ Village to pinpoint user registration locations.
-*   **👥 Tiered Membership & Borrow Limits:** Enforced strict borrowing limits based on membership tiers (**GOLD**: 5 books, **SILVER**: 3 books, **STRIVER**: 2 books) with manual approval flows.
-*   **📦 Smart Inventory & Category Validation:** Room, shelf, and book management. Enforces strict validation ensuring books are only placed on shelves matching their specific category (e.g., *SCIENCE*, *FICTION*).
-*   **📊 Room Optimization & Book Counting:** Real-time aggregation of book counts across multiple shelves in a room, with built-in optimization to locate the room with the fewest books.
-*   **💰 Dynamic Late Fee Calculation:** Automated fee generation based on membership type (Gold: 50 RWF/day, Silver: 30 RWF/day, Striver: 10 RWF/day).
-*   **⚡ Robust Session Management:** Solved complex Hibernate detached-entity and connection lifecycle issues (`LogicalConnectionManagedImpl is closed`) to ensure clean, transactional service layers.
+This project focuses on clean entity relationships, service-layer business logic, database persistence, and automated testing.
 
 ---
 
-## 📸 System Screenshots
+## What We Did
 
-### 🧪 Test Suite Execution
-*Below is the execution of the full test suite showing all 33 test cases passing successfully:*
+We built and tested a complete backend library management system with the following features:
 
-![Test Suite Execution](docs/screenshots/test-suite-pass.png)
-
-### 🗄️ Database Schema & Tables
-*The generated PostgreSQL database schema reflecting the entities and relationships:*
-
-![Database Schema](docs/screenshots/database-schema.png)
-
-*(Note: To display your screenshots, create a folder named `docs/screenshots/` in your project, save your images there as `test-suite-pass.png` and `database-schema.png`, and commit them to Git!)*
-
----
-
-## 🛠️ Technology Stack
-
-| Component | Technology | Version / Details |
-| :--- | :--- | :--- |
-| **Language** | Java | JDK 17+ |
-| **ORM Framework** | Hibernate / JPA | v6.5.2.Final |
-| **Database** | PostgreSQL | Local / Production instance |
-| **Connection Pool** | HikariCP | High-performance pooling |
-| **Testing Framework**| JUnit | v4.13.2 |
-| **Build Tool** | Maven | Project lifecycle management |
+- User registration and membership management
+- Province and location-based user tracking
+- Book, shelf, and room inventory management
+- Shelf-to-room assignment
+- Book-to-shelf assignment with category validation
+- Borrowing records management
+- Borrow limit validation based on membership type
+- Room-based book counting
+- Finding the room with the fewest books
+- Late fee calculation based on membership type
+- Hibernate session and transaction handling
+- Full automated testing using JUnit
 
 ---
 
-## ⚙️ Configuration & Setup
+## Technologies Used
 
-### 1. Database Configuration
-Ensure your PostgreSQL database is running and update your connection settings in `src/main/resources/hibernate.cfg.xml`:
+| **Technology** | **Purpose** |
+|:---|:---|
+| Java | Main programming language |
+| Hibernate / JPA | ORM and database persistence |
+| PostgreSQL | Relational database |
+| Maven | Dependency management and build tool |
+| JUnit | Unit and integration testing |
+| pgAdmin | Database visualization and management |
+| HikariCP | Database connection pooling |
 
-```xml
-<property name="connection.url">jdbc:postgresql://localhost:5432/auca_library</property>
-<property name="connection.username">your_username</property>
-<property name="connection.password">your_password</property>
+---
+
+## Project Screenshots
+
+### Database Schema and Tables
+
+The screenshot below shows the generated PostgreSQL database tables in pgAdmin.
+
+<img width="958" height="539" alt="image" src="https://github.com/user-attachments/assets/ff09e8cf-d1be-41d1-9c64-078b9f7f4f80" />
+
+
+---
+
+### Test Suite Results
+
+The screenshot below shows the successful execution of the automated test suite.
+
+<img width="958" height="539" alt="image" src="https://github.com/user-attachments/assets/f6e96fd6-f18c-4018-a154-03451d0fc840" />
+
+
+---
+
+
+
+
